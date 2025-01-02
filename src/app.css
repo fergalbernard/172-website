@@ -6,9 +6,54 @@
     body {
         @apply bg-midnight text-cream;
         background-image: 
-            linear-gradient(to right, rgba(74, 93, 78, 0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(74, 93, 78, 0.03) 1px, transparent 1px);
-        background-size: 24px 24px;
+            url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 50 Q 40 30 50 45 T 70 50' stroke='rgba(74, 93, 78, 0.08)' fill='none' transform='rotate(30)'/%3E%3Cpath d='M20 70 Q 40 50 45 65 T 60 70' stroke='rgba(74, 93, 78, 0.06)' fill='none'/%3E%3Cpath d='M60 20 Q 70 10 75 25 T 80 30' stroke='rgba(74, 93, 78, 0.07)' fill='none' transform='rotate(-15)'/%3E%3C/svg%3E"),
+            url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 60 Q 50 40 60 55 T 80 60' stroke='rgba(74, 93, 78, 0.05)' fill='none' transform='rotate(15)'/%3E%3Cpath d='M30 80 Q 50 60 55 75 T 70 80' stroke='rgba(74, 93, 78, 0.04)' fill='none' transform='rotate(-20)'/%3E%3C/svg%3E");
+        background-size: 200px 200px, 240px 240px;
+        animation: randomFloat 80s linear infinite;
+    }
+
+    body::before {
+        content: '';
+        @apply fixed inset-0 pointer-events-none;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 50 C 40 30 60 30 80 50' stroke='rgba(74, 93, 78, 0.05)' fill='none' transform='rotate(180 50 50)'/%3E%3C/svg%3E");
+        background-size: 300px 300px;
+        animation: reverseFloat 100s linear infinite;
+    }
+}
+
+@keyframes randomFloat {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    25% {
+        background-position: 50px 20px, -30px 50px;
+    }
+    50% {
+        background-position: 20px 50px, 50px -20px;
+    }
+    75% {
+        background-position: -30px 30px, 20px 40px;
+    }
+    100% {
+        background-position: 0 0, 0 0;
+    }
+}
+
+@keyframes reverseFloat {
+    0% {
+        background-position: 0 0;
+    }
+    25% {
+        background-position: -30px -20px;
+    }
+    50% {
+        background-position: -50px -50px;
+    }
+    75% {
+        background-position: -20px -30px;
+    }
+    100% {
+        background-position: 0 0;
     }
 }
 
@@ -19,23 +64,26 @@
 
     .container::before {
         content: '';
-        @apply absolute -left-4 top-0 w-[2px] h-full bg-sage/10;
+        @apply absolute -left-4 top-0 w-[2px] h-full bg-coral/20;
     }
 
     .container::after {
         content: '';
-        @apply absolute -right-4 top-0 w-[2px] h-full bg-sage/10;
+        @apply absolute -right-4 top-0 w-[2px] h-full bg-coral/20;
     }
 
     .article-card {
         @apply bg-midnight-light border-sage/10 border rounded-lg 
                hover:border-coral/30 transition-all duration-200 p-6 relative;
-        background-image: radial-gradient(circle at 100% 100%, rgba(74, 93, 78, 0.05) 0%, transparent 50%);
+        background-image: 
+            radial-gradient(circle at 100% 100%, rgba(74, 93, 78, 0.08) 0%, transparent 60%),
+            url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 25 Q 20 15 25 22 T 35 25' stroke='rgba(74, 93, 78, 0.05)' fill='none'/%3E%3C/svg%3E");
+        background-size: 100% 100%, 100px 100px;
     }
 
     .article-card::before {
         content: '';
-        @apply absolute top-0 left-4 w-8 h-[2px] bg-sage/10;
+        @apply absolute top-0 left-4 w-8 h-[2px] bg-coral/20;
     }
 }
 

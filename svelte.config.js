@@ -8,14 +8,16 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: '404.html',
-			precompress: true
+			precompress: true,
+			strict: true
 		}),
 		prerender: {
 			entries: ['*']
 		},
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/172-Website' : ''
-		}
+			base: process.env.NODE_ENV === 'production' ? '/172-website' : ''
+		},
+		appDir: 'app'
 	},
 	preprocess: vitePreprocess()
 };

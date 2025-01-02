@@ -12,6 +12,9 @@ const config = {
 		}),
 		prerender: {
 			entries: ['*']
+		},
+		paths: {
+			base: process.env.NODE_ENV === 'production' ? '/172-Website' : ''
 		}
 	},
 	preprocess: vitePreprocess()

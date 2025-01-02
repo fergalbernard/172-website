@@ -16,14 +16,9 @@ const config = {
 			base: dev ? '' : '/172-website'
 		},
 		prerender: {
-			handleHttpError: ({ path, referrer, message }) => {
-				// Ignore errors for paths that don't start with base
-				if (!path.startsWith('/172-website/')) {
-					return;
-				}
-				console.warn(`Warning: ${message}`);
-			}
-		}
+			handleHttpError: 'ignore'
+		},
+		appDir: '_app'
 	},
 	preprocess: vitePreprocess()
 };

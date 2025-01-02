@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -6,8 +6,20 @@
 		<script>
 			const base = '/172-website';
 			const path = window.location.pathname;
-			if (path !== base && path !== base + '/') {
+			const segments = path.split('/').filter(Boolean);
+			
+			// If we're not at the base path and not at a valid route
+			if (segments[0] === '172-website') {
+				// Remove the base path from consideration
+				segments.shift();
+			}
+			
+			if (segments.length === 0) {
+				// If no segments after base, go to home
 				window.location.href = base;
+			} else {
+				// Try to load the SPA at the current path
+				window.location.href = base + '/#' + path.slice(base.length);
 			}
 		</script>
 	</head>

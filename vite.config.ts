@@ -8,7 +8,13 @@ export default defineConfig({
 			allow: ['..']
 		}
 	},
-	ssr: {
-		noExternal: ['mdsvex']
+	build: {
+		target: 'esnext',
+		assetsDir: '_app',
+		rollupOptions: {
+			output: {
+				manualChunks: undefined
+			}
+		}
 	}
 });

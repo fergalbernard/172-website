@@ -7,7 +7,7 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: '404.html',
+			fallback: 'index.html',
 			precompress: true,
 			strict: true
 		}),
@@ -17,7 +17,8 @@ const config = {
 		paths: {
 			base: process.env.NODE_ENV === 'production' ? '/172-website' : ''
 		},
-		appDir: 'app'
+		appDir: 'app',
+		trailingSlash: 'always'
 	},
 	preprocess: vitePreprocess()
 };

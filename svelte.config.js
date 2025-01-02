@@ -1,24 +1,25 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
+const dev = process.env.NODE_ENV === 'development';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: 'index.html',
-			precompress: true,
-			strict: true
-		}),
-		prerender: {
-			entries: ['*']
-		},
+		adapter: adapter(),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/172-website' : ''
+			base: dev ? '' : '/172-website'
 		},
-		appDir: 'app',
-		trailingSlash: 'always'
+		prerender: {
+			entries: ['*'],
+			handleHttpError: ({ path, referrer, message }) => {
+				// Ignore static assets not found
+				if (path.startsWith('/static/')) {
+					return;
+				}
+				throw new Error(message);
+			}
+		}
 	},
 	preprocess: vitePreprocess()
 };

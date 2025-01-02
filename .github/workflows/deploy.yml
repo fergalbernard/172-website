@@ -33,7 +33,10 @@ jobs:
       - name: Build
         env:
           NODE_ENV: production
-        run: npm run build
+          BASE_PATH: '/172-website'
+        run: |
+          npm run build
+          cp build/404.html build/index.html
 
       - name: Create .nojekyll
         run: touch build/.nojekyll

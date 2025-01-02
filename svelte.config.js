@@ -6,18 +6,22 @@ const dev = process.env.NODE_ENV === 'development';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: 'index.html',
+			strict: false
+		}),
 		paths: {
 			base: dev ? '' : '/172-website'
 		},
 		prerender: {
-			entries: ['*'],
 			handleHttpError: ({ path, referrer, message }) => {
-				// Ignore static assets not found
-				if (path.startsWith('/static/')) {
+				// Ignore errors for paths that don't start with base
+				if (!path.startsWith('/172-website/')) {
 					return;
 				}
-				throw new Error(message);
+				console.warn(`Warning: ${message}`);
 			}
 		}
 	},

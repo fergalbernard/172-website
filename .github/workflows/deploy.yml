@@ -34,12 +34,12 @@ jobs:
         env:
           NODE_ENV: production
           BASE_PATH: '/172-website'
-        run: |
-          npm run build
-          cp build/404.html build/index.html
+        run: npm run build
 
-      - name: Create .nojekyll
-        run: touch build/.nojekyll
+      - name: Prepare for deployment
+        run: |
+          cp build/index.html build/404.html
+          touch build/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

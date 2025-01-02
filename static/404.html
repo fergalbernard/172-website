@@ -4,23 +4,7 @@
 		<meta charset="utf-8" />
 		<title>Page not found</title>
 		<script>
-			const base = '/172-website';
-			const path = window.location.pathname;
-			const segments = path.split('/').filter(Boolean);
-			
-			// If we're not at the base path and not at a valid route
-			if (segments[0] === '172-website') {
-				// Remove the base path from consideration
-				segments.shift();
-			}
-			
-			if (segments.length === 0) {
-				// If no segments after base, go to home
-				window.location.href = base;
-			} else {
-				// Try to load the SPA at the current path
-				window.location.href = base + '/#' + path.slice(base.length);
-			}
+			window.location.href = '/172-website/';
 		</script>
 	</head>
 	<body>

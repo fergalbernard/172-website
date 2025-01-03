@@ -33,17 +33,16 @@ jobs:
       - name: Build
         env:
           NODE_ENV: production
-          BASE_PATH: '/172-website'
         run: npm run build
 
       - name: Prepare for deployment
         run: |
           cp build/index.html build/404.html
           touch build/.nojekyll
-          echo '/* /index.html 200' > build/_headers
-          echo '/*.js application/javascript' > build/_redirects
-          echo '/*.css text/css' >> build/_redirects
-          echo '/*.json application/json' >> build/_redirects
+          echo '/*    /index.html   200' > build/_redirects
+          echo '/*.js   application/javascript   200' >> build/_redirects
+          echo '/*.css  text/css                200' >> build/_redirects
+          echo '/*.json application/json        200' >> build/_redirects
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

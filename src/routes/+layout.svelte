@@ -19,7 +19,15 @@
 	<header class="sticky top-0 z-10 py-6">
 		<div class="container">
 			<div class="flex items-center justify-between">
-				<a href="{base}/" class="site-title text-cream relative text-3xl md:text-5xl">The 172 Gazette</a>
+				<a href="{base}/" class="site-title text-cream relative text-3xl md:text-5xl flex items-center gap-2">
+					<span>the</span>
+					<img 
+						src="/logo-512x512.png" 
+						alt="172" 
+						class="w-10 md:w-14 h-10 md:h-14 object-contain mt-4"
+					/>
+					<span>Gazette</span>
+				</a>
 				
 				<!-- Desktop Navigation -->
 				<nav class="hidden md:block">
@@ -28,7 +36,7 @@
 							<li>
 								<a 
 									href="{base}{href}" 
-									class="text-cream/60 hover:text-cream transition-colors text-sm uppercase tracking-wide"
+									class="text-coral/70 hover:text-coral transition-colors text-sm uppercase tracking-wide"
 								>
 									{label}
 								</a>
@@ -39,7 +47,7 @@
 
 				<!-- Mobile Menu Button -->
 				<button 
-					class="md:hidden text-cream/60 hover:text-cream p-2"
+					class="md:hidden text-coral/70 hover:text-coral p-2"
 					on:click={toggleMenu}
 					aria-label="Toggle menu"
 				>
@@ -82,7 +90,7 @@
 					<li>
 						<a 
 							href="{base}{href}" 
-							class="text-cream/80 hover:text-cream transition-colors text-lg uppercase tracking-wide block"
+							class="text-coral/70 hover:text-coral transition-colors text-lg uppercase tracking-wide block"
 							on:click={toggleMenu}
 						>
 							{label}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,6 +41,14 @@
     .article-card::before {
         content: '';
         @apply absolute top-0 left-4 w-8 h-[2px] bg-coral/20;
+    }
+
+    .site-title {
+        font-family: 'Playfair Display', serif;
+        @apply text-5xl tracking-wider font-bold;
+        text-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.3),
+            0 0 30px rgba(0, 0, 0, 0.1);
     }
 }
 

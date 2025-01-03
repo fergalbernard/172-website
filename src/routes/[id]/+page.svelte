@@ -5,7 +5,7 @@
     export let data: PageData;
 </script>
 
-<div class="min-h-screen py-8">
+<div class="py-8">
     <div class="container">
         <a href="{base}/" class="text-sage-light hover:text-cream transition-colors">← Back to articles</a>
         

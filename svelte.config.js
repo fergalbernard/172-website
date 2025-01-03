@@ -7,10 +7,16 @@ const dev = process.env.NODE_ENV === 'development';
 const config = {
 	kit: {
 		adapter: adapter({
-			fallback: 'index.html'
+			pages: 'build',
+			assets: 'build',
+			fallback: 'index.html',
+			precompress: false
 		}),
 		paths: {
 			base: dev ? '' : '/172-website'
+		},
+		prerender: {
+			handleHttpError: 'warn'
 		}
 	},
 	preprocess: vitePreprocess()

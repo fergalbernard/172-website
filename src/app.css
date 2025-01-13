@@ -50,6 +50,55 @@
             2px 2px 4px rgba(0, 0, 0, 0.3),
             0 0 30px rgba(0, 0, 0, 0.1);
     }
+
+    /* Markdown Styles */
+    .prose h1 {
+        @apply text-3xl font-bold text-coral mb-6 mt-8;
+    }
+
+    .prose h2 {
+        @apply text-2xl font-semibold text-coral mb-4 mt-6;
+    }
+
+    .prose h3 {
+        @apply text-xl font-semibold text-coral mb-3 mt-5;
+    }
+
+    .prose p {
+        @apply mb-4 text-cream/90 leading-relaxed;
+    }
+
+    .prose strong {
+        @apply text-coral font-semibold;
+    }
+
+    .prose em {
+        @apply text-cream/80 italic;
+    }
+
+    .prose ul {
+        @apply list-disc pl-6 mb-4 text-cream/90;
+    }
+
+    .prose ol {
+        @apply list-decimal pl-6 mb-4 text-cream/90;
+    }
+
+    .prose li {
+        @apply mb-2;
+    }
+
+    .prose blockquote {
+        @apply border-l-4 border-coral/30 pl-4 italic text-cream/80 my-6;
+    }
+
+    .prose a {
+        @apply text-coral hover:text-coral/80 transition-colors;
+    }
+
+    .prose hr {
+        @apply my-8 border-sage/20;
+    }
 }
 
 /* Custom colors */

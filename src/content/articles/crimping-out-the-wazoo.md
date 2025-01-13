@@ -1,11 +1,33 @@
 ---
-title: Crimping out the wazoo
-date: 2024-01-02
-excerpt: My biggest friend is a troubadour.
+title: "Crimping Out the Wazoo"
+description: "A deep dive into network cable crimping"
+date: "2024-03-14"
+author: "Peta"
+censoredWords: ["wazoo", "stupid", "idiot"]
+excerpt: "Learn how to crimp network cables like a pro, even if you're a stupid idiot."
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+# Network Cable Crimping 101
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Here's a **bold statement**: Crimping network cables isn't rocket science! Even a complete *wazoo* can do it.
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+## Basic Steps
+
+1. Strip the cable jacket
+2. Untwist the pairs
+3. Arrange wires in correct order
+4. Insert into connector
+5. Crimp with tool
+
+### Common Wire Orders
+
+- T568A (Residential)
+- T568B (Commercial)
+
+> Pro tip: Always test your cables after crimping!
+
+Want to learn more? Check out our [Networking Basics](/networking) guide.
+
+---
+
+Remember: There are no stupid questions in networking, only *idiot* answers.

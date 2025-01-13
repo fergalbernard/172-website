@@ -4,12 +4,21 @@ import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 
+// Configure marked options for better HTML output
+marked.setOptions({
+    breaks: true,
+    gfm: true,
+    pedantic: false,
+});
+
 export interface Article {
     id: string;
     title: string;
     date: string;
     excerpt: string;
     content: string;
+    author: string;
+    censoredWords?: string[];
 }
 
 const articlesDirectory = path.join(process.cwd(), 'src/content/articles');
@@ -26,10 +35,12 @@ export async function getAllArticles(): Promise<Article[]> {
             
             return {
                 id,
-                content: await marked(content),
                 title: data.title,
                 date: data.date,
-                excerpt: data.excerpt
+                excerpt: data.excerpt,
+                content: marked(content),
+                author: data.author,
+                censoredWords: data.censoredWords || []
             } as Article;
         }));
 
@@ -44,10 +55,12 @@ export async function getArticleById(id: string): Promise<Article | undefined> {
 
         return {
             id,
-            content: await marked(content),
             title: data.title,
             date: data.date,
-            excerpt: data.excerpt
+            excerpt: data.excerpt,
+            content: await marked(content),
+            author: data.author,
+            censoredWords: data.censoredWords || []
         };
     } catch (error) {
         if (!dev) console.error(`Error loading article ${id}:`, error);

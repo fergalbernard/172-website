@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import '../app.css';
+	import { isCensoringEnabled } from '$lib/stores/censor';
 
 	const navItems = [
 		{ href: '/', label: 'Articles' },
@@ -30,7 +31,17 @@
 				</a>
 				
 				<!-- Desktop Navigation -->
-				<nav class="hidden md:block">
+				<nav class="hidden md:flex items-center space-x-8">
+					<div class="flex items-center space-x-2 mr-4">
+						<label class="text-coral/70 text-sm uppercase tracking-wide cursor-pointer flex items-center">
+							<input
+								type="checkbox"
+								bind:checked={$isCensoringEnabled}
+								class="mr-2 accent-coral"
+							/>
+							Profanity Filter
+						</label>
+					</div>
 					<ul class="flex space-x-8">
 						{#each navItems as { href, label }}
 							<li>
@@ -85,6 +96,16 @@
 		class:translate-x-0={isMenuOpen}
 	>
 		<nav class="pt-24 px-8">
+			<div class="mb-6">
+				<label class="text-coral/70 text-sm uppercase tracking-wide cursor-pointer flex items-center">
+					<input
+						type="checkbox"
+						bind:checked={$isCensoringEnabled}
+						class="mr-2 accent-coral"
+					/>
+					Profanity Filter
+				</label>
+			</div>
 			<ul class="space-y-6">
 				{#each navItems as { href, label }}
 					<li>

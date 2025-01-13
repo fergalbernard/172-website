@@ -2,7 +2,7 @@
 title: "Crimping Out the Wazoo"
 description: "A deep dive into network cable crimping"
 date: "2024-03-14"
-author: "Peta"
+author: "Test"
 censoredWords: ["wazoo", "stupid", "idiot"]
 excerpt: "Learn how to crimp network cables like a pro, even if you're a stupid idiot."
 ---

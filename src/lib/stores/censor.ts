@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-export const isCensoringEnabled = writable(false);
+export const isCensoringEnabled = writable(true);
 
 export function censorText(text: string, censoredWords: string[] = []): string {
     if (!censoredWords || censoredWords.length === 0) return text;
